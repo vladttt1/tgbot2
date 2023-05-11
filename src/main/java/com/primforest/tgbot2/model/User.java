@@ -1,13 +1,21 @@
 package com.primforest.tgbot2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.sql.Timestamp;
 
-@Entity(name="user")
+
+
+
+
+@Data
+@Document(collection="user")
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class User {
     public Timestamp getRegisteredAt() {
@@ -49,7 +57,7 @@ public class User {
     }
 
     @Id
-    @GeneratedValue
+
     private Long chatId;
     private String firstName;
     private  String lastName;

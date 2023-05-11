@@ -67,6 +67,7 @@ public class TelegramBot extends TelegramLongPollingBot{
                     try {
                         registerUser(update.getMessage());
                         startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
